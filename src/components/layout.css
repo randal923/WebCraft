@@ -1,0 +1,45 @@
+html {
+  font-size: 62.5%;
+  font-family: Roboto;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  --bg: #08101f;
+  --red: #b94a4d;
+  --blue: #5f99fc;
+  --green: #00be9c;
+  --gray: #94999e;
+  --white: white;
+
+  --whatsapp-hover: #009f83;
+  --mainbutton-hover: #b40427;
+
+  --green-button-hover: #009f83;
+  --red-button-hover: #9a383a;
+  --blue-button-hover: #4579d3;
+}
+
+* {
+  color: white;
+}
+
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
