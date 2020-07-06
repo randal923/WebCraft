@@ -1,13 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import { Player } from "video-react"
 
 const VideoComponent = () => {
   return (
     <Container>
-      <video width="800" controls>
-        <source src="../images/showreel.mp4" type="video/mp4"></source>
-      </video>
+      <iframe
+        width="727"
+        height="409"
+        src="https://www.youtube.com/embed/yykSz3WOzTE"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture autoplay"
+        allowfullscreen
+      ></iframe>
     </Container>
   )
 }
