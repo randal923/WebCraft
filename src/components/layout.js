@@ -6,7 +6,6 @@ import "./layout.css"
 import styled from "styled-components"
 
 // Components
-import Stripe from "./stripe"
 import Header from "./header"
 
 // Icons
@@ -17,11 +16,9 @@ const Layout = ({ children }) => {
   const red = "#b94a4d"
   return (
     <>
-      <Stripe />
       <Container>
         <main>{children}</main>
         <Footer>
-          <Header siteTitle={"WebCraft"} />
           <h2 className="projeto">Tem um projeto em mente?</h2>
           <h2 className="contato">Fale Conosco</h2>
           <div className="contact">
@@ -56,10 +53,6 @@ const Footer = styled.div`
   align-items: flex-start;
   height: 100vh;
   margin-top: 50px;
-
-  h1 {
-    color: var(--gray);
-  }
 
   .projeto {
     font-size: 2.6rem;

@@ -4,22 +4,26 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
+import { breakpoints } from "./breakpoints"
+
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
     query Images {
       logo: file(relativePath: { eq: "webcraft.png" }) {
-        id
         childImageSharp {
-          fixed(width: 80) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 80) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
+
   return (
     <Container>
-      <Img fixed={data.logo.childImageSharp.fixed} alt="WebCraft Logo" />
+      <div>
+        <Img fluid={data.logo.childImageSharp.fluid} alt="WebCraft Logo" />
+      </div>
       <h1>{siteTitle}</h1>
     </Container>
   )
@@ -38,10 +42,23 @@ export default Header
 const Container = styled.header`
   display: flex;
   align-items: center;
-  margin: 30px 0 0 30px;
 
   h1 {
-    margin-top: 22px;
-    font-size: 4.5rem;
+    margin-top: 14px;
+    font-size: 3rem !important;
+  }
+
+  div {
+    width: 80px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    div {
+      width: 40px;
+    }
+    h1 {
+      margin-top: 12px;
+      font-size: 2rem !important;
+    }
   }
 `

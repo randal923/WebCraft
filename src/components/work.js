@@ -1,120 +1,122 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+
+import { breakpoints } from "./breakpoints"
 
 // Images (SVGs)
 import LinesSVG from "../images/lines.svg"
+import reactLogo from "../images/react.svg"
+import computerLogo from "../images/computer.svg"
+import graphLogo from "../images/graph.svg"
+import pencilLogo from "../images/pencil.svg"
 
 const Work = () => {
-  const data = useStaticQuery(graphql`
-    query workImages {
-      react: file(relativePath: { eq: "react.png" }) {
-        childImageSharp {
-          fixed(width: 80) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      seo: file(relativePath: { eq: "seo.png" }) {
-        childImageSharp {
-          fixed(width: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      graph: file(relativePath: { eq: "graph.png" }) {
-        childImageSharp {
-          fixed(width: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      pencil: file(relativePath: { eq: "pencil.png" }) {
-        childImageSharp {
-          fixed(width: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
   return (
-    <Container>
-      <div className="images">
-        <Img
-          fixed={data.react.childImageSharp.fixed}
-          alt="React Logo"
-          className="react"
+    <WhatWeDo>
+      <img
+        src={reactLogo}
+        className="lines"
+        alt="React logo"
+        className="react"
+      />
+      <img src={LinesSVG} className="lines" alt="lines img" />
+      <Logos>
+        <img
+          src={pencilLogo}
+          className="lines"
+          alt="lines img"
+          className="pencil"
         />
-        <img src={LinesSVG} alt="what we do" className="lines" />
-        <div className="logos">
-          <div className="seo">
-            <Img fixed={data.seo.childImageSharp.fixed} alt="Seo Logo" />
-          </div>
-          <div className="graph">
-            <Img fixed={data.graph.childImageSharp.fixed} alt="Graph Logo" />
-          </div>
-          <div className="pencil">
-            <Img fixed={data.pencil.childImageSharp.fixed} alt="Pencil Logo" />
-          </div>
+        <img
+          src={graphLogo}
+          className="lines"
+          alt="lines img"
+          className="graph"
+        />
+        <img
+          src={computerLogo}
+          className="lines"
+          alt="lines img"
+          className="computer"
+        />
+      </Logos>
+      <Text>
+        <div className="graphText">
+          <h2>
+            Design <br /> Gráfico
+          </h2>
+          <h4>
+            Design <br /> Completo
+          </h4>
         </div>
-
-        <Text>
-          <div className="graphText">
-            <h2>
-              Design <br /> Grafico
-            </h2>
-            <h4>Design Completo</h4>
-          </div>
-          <div className="seoText">
-            <h2>
-              Marketing <br /> Digital
-            </h2>
-            <h4>SEO (Google)</h4>
-            <h4>Medias Sociais</h4>
-            <h4>Blogs</h4>
-          </div>
-          <div className="marketingText">
-            <h2>
-              Desenvolvimento <br /> Web
-            </h2>
-            <h4>Aplicativos</h4>
-            <h4>E-commerce</h4>
-            <h4>Websites em Geral</h4>
-          </div>
-        </Text>
-      </div>
-    </Container>
+        <div className="marketingText">
+          <h2>
+            Marketing <br /> Digital
+          </h2>
+          <h4>SEO (Google)</h4>
+          <h4>Mídias Sociais</h4>
+          <h4>Blogs</h4>
+        </div>
+        <div className="websiteText">
+          <h2>
+            Criação de <br /> Websites
+          </h2>
+          <h4>Aplicativos</h4>
+          <h4>E-commerce</h4>
+          <h4>
+            Websites <br /> em Geral
+          </h4>
+        </div>
+      </Text>
+    </WhatWeDo>
   )
 }
 
 export default Work
 
-const Container = styled.div`
+const WhatWeDo = styled.div`
+  margin-top: 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-
-  .images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  .logos {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  height: 300px;
 
   .react {
-    margin-bottom: 15px;
-    display: inline-block;
-    animation: rotation 15s infinite linear;
+    width: 50px;
+    margin-bottom: 10px;
+    animation: rotation 30s infinite linear;
+  }
+
+  .lines {
+    width: 240px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: ${breakpoints.mediumMobile}) {
+    .lines {
+      width: 330px;
+    }
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    .lines {
+      width: 500px;
+    }
+    .react {
+      width: 70px;
+    }
+  }
+
+  @media (min-width: ${breakpoints.wide}) {
+    .lines {
+      width: 585px;
+    }
+    .react {
+      width: 70px;
+    }
   }
 
   @keyframes rotation {
@@ -125,52 +127,98 @@ const Container = styled.div`
       transform: rotate(359deg);
     }
   }
+`
 
-  .seo {
-    div {
-      position: absolute;
-      right: 20px;
+const Logos = styled.div`
+  width: 265px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+
+  img {
+    width: 30px;
+  }
+
+  @media (min-width: ${breakpoints.mediumMobile}) {
+    width: 360px;
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 540px;
+
+    img {
+      width: 40px;
     }
   }
 
-  .pencil {
-    div {
-      position: absolute;
-      left: 25px;
+  @media (min-width: ${breakpoints.wide}) {
+    width: 650px;
+
+    img {
+      width: 50px;
     }
   }
 `
 
 const Text = styled.div`
+  width: 300px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
   text-align: center;
-  align-items: center;
+  margin-top: 10px;
 
   h2 {
-    margin: 20px 0 15px 0;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   h4 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    color: var(--gray);
+  }
+
+  .marketingText {
+    margin-left: 15px;
   }
 
   .graphText {
-    position: absolute;
-    top: 95%;
-    left: 45%;
+    margin-left: 10px;
   }
-  .seoText {
-    position: absolute;
-    left: -40px;
-    top: 150px;
+
+  @media (min-width: ${breakpoints.mediumMobile}) {
+    width: 390px;
   }
-  .marketingText {
-    position: absolute;
-    right: -60px;
-    top: 150px;
+
+  @media (min-width: ${breakpoints.mobile}) {
+    width: 385px;
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 570px;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    .graphText {
+      margin-left: 10px;
+    }
+
+    .marketingText {
+      margin-left: 20px;
+    }
+  }
+
+  @media (min-width: ${breakpoints.wide}) {
+    width: 700px;
+    h2 {
+      font-size: 1.8rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
   }
 `

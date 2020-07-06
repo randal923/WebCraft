@@ -13,19 +13,25 @@ const Video = () => {
       <div className="cards">
         <div className="card">
           <img src={card1SVG} alt="Pacote Basico" />
+          <Pacote>
+            <TituloCard>Básico</TituloCard>
+            <Preco>
+              <span>A partir de</span>
+              <h3>
+                R$ 199 <br /> Por Mês
+              </h3>
+            </Preco>
+            <Lista>
+              <h4>Até 4 Páginas</h4>
+              <h4>Domínio Próprio</h4>
+              <h4>Design Customizádio</h4>
+              <h4>
+                Otimização de SEO <span>(GOOGLE)</span>
+              </h4>
+              <h4>Email próprio com assinatura cutomizáda</h4>
+            </Lista>
+          </Pacote>
           <button className="card-button green">COMPRAR</button>
-        </div>
-        <div>
-          <div className="card">
-            <img src={card2SVG} alt="Pacote E-commerce" />
-            <button className="card-button blue">COMPRAR</button>
-          </div>
-        </div>
-        <div>
-          <div className="card">
-            <img src={card3SVG} alt="Pacote Premium" />
-            <button className="card-button red">COMPRAR</button>
-          </div>
         </div>
       </div>
     </Container>
@@ -54,6 +60,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     img {
       margin: 50px;
     }
@@ -86,5 +93,54 @@ const Container = styled.div`
     :hover {
       background: var(--red-button-hover);
     }
+  }
+`
+
+const Pacote = styled.div`
+  position: absolute;
+  top: 415px;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const TituloCard = styled.div`
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+`
+
+const Preco = styled.div`
+  font-size: 4rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    color: var(--green);
+  }
+
+  span {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--green);
+  }
+`
+
+const Lista = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.7rem;
+  width: 250px;
+  margin-top: 80px;
+  text-align: center;
+
+  h4 {
+    margin-bottom: 60px;
   }
 `

@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { FaWhatsapp } from "react-icons/fa"
 
+import { breakpoints } from "./breakpoints"
+
 const Stripe = () => {
   return (
     <Container>
@@ -25,6 +27,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.4rem;
+  width: 100%;
   h4 {
     :nth-child(1) {
       margin-left: 10px;
@@ -49,6 +52,15 @@ const Container = styled.div`
       align-items: center;
       svg {
         margin-right: 2px;
+      }
+    }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 1.1rem;
+    h4 {
+      :nth-child(1) {
+        display: none;
       }
     }
   }
