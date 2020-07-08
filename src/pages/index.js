@@ -7,8 +7,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import Work from "../components/work.js"
 
-import VideoComponent from "../components/video"
-import Pacotes from "../components/packages"
+import Packages from "../components/packages"
 import Customers from "../components/customers"
 import Menu from "../components/menu"
 import Stripe from "../components/stripe"
@@ -41,7 +40,7 @@ const IndexPage = () => {
         </MenuLogo>
         <MainHeader />
         <Work />
-        <VideoComponent />
+        <Packages />
       </Layout>
     </Container>
   )

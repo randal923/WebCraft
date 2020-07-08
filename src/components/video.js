@@ -1,16 +1,14 @@
 import React from "react"
 import styled from "styled-components"
+import { breakpoints } from "./breakpoints"
 
 const VideoComponent = () => {
   return (
     <Container>
       <iframe
-        width="727"
-        height="409"
-        src="https://www.youtube.com/embed/yykSz3WOzTE"
+        src="https://www.youtube.com/embed/nJTsbZojero?controls=0&amp;start=4&autoplay=1&loop=1"
         frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture autoplay"
-        allowfullscreen
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
     </Container>
   )
@@ -22,5 +20,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px 0 100px 0;
+
+  iframe {
+    height: 500px;
+    width: 80%;
+  }
 `
