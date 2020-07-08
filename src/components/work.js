@@ -102,6 +102,7 @@ const WhatWeDo = styled.div`
   }
 
   @media (min-width: ${breakpoints.tablet}) {
+    height: 400px;
     .lines {
       width: 500px;
     }
