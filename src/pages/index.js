@@ -12,6 +12,7 @@ import Customers from "../components/customers"
 import Menu from "../components/menu"
 import Stripe from "../components/stripe"
 import MainHeader from "../components/mainHeader"
+import Video from "../components/video"
 
 // Style
 import styled from "styled-components"
@@ -40,6 +41,7 @@ const IndexPage = () => {
         </MenuLogo>
         <MainHeader />
         <Work />
+        <Video />
         <Packages />
       </Layout>
     </Container>
