@@ -20,8 +20,8 @@ const Packages = () => {
             <span>A partir de</span> <br /> R$ 199 <br /> Por Mês
           </h3>
           <ul>
-            <li>Ate 4 Páginas</li>
-            <li>Dominio Próprio</li>
+            <li>Até 4 Páginas</li>
+            <li>Domínio Próprio</li>
             <li>Design Customizado</li>
             <li>
               Otimização de SEO <br /> (Google)
@@ -45,8 +45,9 @@ const Packages = () => {
             <li>Página de Produtos</li>
             <li>Carrinho de Compras</li>
             <li>
-              Hospedagem e<br /> Manutenção do Site
+              Hospedagem e<br /> Manutenção do Site*
             </li>
+            <li>*Para mais informações, entre em contato</li>
           </ul>
           <button className="comprarEcommerce">
             <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5511941337325">

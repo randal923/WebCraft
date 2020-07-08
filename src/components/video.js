@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { breakpoints } from "./breakpoints"
 
 const VideoComponent = () => {
   return (
     <Container id="video">
       <iframe
+        title="VideoFrame"
         src="https://www.youtube.com/embed/nJTsbZojero?controls=0&amp;start=4&autoplay=1&loop=1"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

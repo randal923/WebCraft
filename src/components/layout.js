@@ -5,9 +5,6 @@ import "./layout.css"
 // Style
 import styled from "styled-components"
 
-// Components
-import Header from "./header"
-
 // Icons
 import { TiPencil } from "react-icons/ti"
 import { GiSmartphone } from "react-icons/gi"
@@ -25,12 +22,12 @@ const Layout = ({ children }) => {
             <div className="write">
               <GiSmartphone size={35} fill={red} />
               <h3>Nos Ligue</h3>
-              <p>(11) 94033-4915</p>
+              <p>(11) 94133-7325</p>
             </div>
             <div>
               <TiPencil size={35} fill={red} />
               <h3>Nos Escreva</h3>
-              <p>info@webcraft.com</p>
+              <p>webcraft42@gmail.com</p>
             </div>
           </div>
         </Footer>
