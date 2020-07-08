@@ -32,8 +32,8 @@ const Customers = () => {
           alt="Alegria Brinquedos Logo"
         />
         <div className="ark">
-          <h2>Ark</h2>
           <Img fixed={data.ark.childImageSharp.fixed} alt="Ark Logo" />
+          <h2>Ark</h2>
         </div>
       </div>
     </Container>
