@@ -21,17 +21,26 @@ const Menu = () => {
       <MenuItems show={openModal}>
         <ul>
           <li>
-            <a href="#video" onClick={() => handleModal()}>
+            <a
+              href="#video"
+              onClick={openModal === true ? handleModal() : null}
+            >
               Portfolio
             </a>
           </li>
           <li>
-            <a href="#packages" onClick={() => handleModal()}>
+            <a
+              href="#packages"
+              onClick={openModal === true ? handleModal() : null}
+            >
               Pacotes
             </a>
           </li>
           <li>
-            <a href="#footer" onClick={() => handleModal()}>
+            <a
+              href="#footer"
+              onClick={openModal === true ? handleModal() : null}
+            >
               Contato
             </a>
           </li>
