@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     <>
       <Container>
         <main>{children}</main>
-        <Footer>
+        <Footer id="footer">
           <h2 className="projeto">Tem um projeto em mente?</h2>
           <h2 className="contato">Fale Conosco</h2>
           <div className="contact">

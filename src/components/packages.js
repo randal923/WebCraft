@@ -9,7 +9,7 @@ import card3SVG from "../images/card3.svg"
 
 const Packages = () => {
   return (
-    <Container>
+    <Container id="packages">
       <h1>Pacotes</h1>
 
       <Cards>
@@ -28,6 +28,11 @@ const Packages = () => {
             </li>
             <li>Email próprio com assinatura customizada</li>
           </ul>
+          <button className="comprarBasico">
+            <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5511941337325">
+              Comprar
+            </a>
+          </button>
         </CardBasico>
         <img src={card2SVG} alt="Pacote Basico" className="card2" />
         <CardEcommerce>
@@ -43,6 +48,11 @@ const Packages = () => {
               Hospedagem e<br /> Manutenção do Site
             </li>
           </ul>
+          <button className="comprarEcommerce">
+            <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5511941337325">
+              Comprar
+            </a>
+          </button>
         </CardEcommerce>
         <img src={card3SVG} alt="Pacote Basico" className="card3" />
         <CardPremium>
@@ -58,6 +68,11 @@ const Packages = () => {
               integrações
             </li>
           </ul>
+          <button className="comprarPremium">
+            <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5511941337325">
+              Comprar
+            </a>
+          </button>
         </CardPremium>
       </Cards>
     </Container>
@@ -81,15 +96,60 @@ const Container = styled.div`
       font-size: 4rem;
     }
   }
+
+  .comprarBasico {
+    background: var(--green);
+    border: 0;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    margin-bottom: 10px;
+
+    :hover,
+    :focus {
+      cursor: pointer;
+      background: var(--green-button-hover);
+    }
+  }
+
+  .comprarEcommerce {
+    background: var(--blue);
+    border: 0;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    margin-bottom: 10px;
+
+    :hover,
+    :focus {
+      cursor: pointer;
+      background: var(--blue-button-hover);
+    }
+  }
+  .comprarPremium {
+    background: var(--red);
+    border: 0;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    margin-bottom: 10px;
+
+    :hover,
+    :focus {
+      cursor: pointer;
+      background: var(--red-button-hover);
+    }
+  }
 `
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+
   img {
     width: 250px;
-    margin-top: 20px;
+    margin: 20px 0 50px 0;
   }
 
   @media (min-width: ${breakpoints.desktop}) {
@@ -136,6 +196,9 @@ const CardBasico = styled.div`
       margin-bottom: 30px;
       text-align: center;
     }
+    li:last-child {
+      margin-bottom: 60px;
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}) {
@@ -146,7 +209,7 @@ const CardBasico = styled.div`
 
 const CardEcommerce = styled.div`
   position: absolute;
-  top: 513px;
+  top: 564px;
   left: 30px;
   width: 200px;
   display: flex;
@@ -181,6 +244,9 @@ const CardEcommerce = styled.div`
       margin-bottom: 30px;
       text-align: center;
     }
+    li:last-child {
+      margin-bottom: 105px;
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}) {
@@ -191,7 +257,7 @@ const CardEcommerce = styled.div`
 
 const CardPremium = styled.div`
   position: absolute;
-  top: 998px;
+  top: 1100px;
   left: 30px;
   width: 200px;
   display: flex;
@@ -225,6 +291,9 @@ const CardPremium = styled.div`
       font-size: 1.2rem;
       margin-bottom: 30px;
       text-align: center;
+    }
+    li:last-child {
+      margin-bottom: 122px;
     }
   }
 

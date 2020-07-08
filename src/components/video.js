@@ -4,7 +4,7 @@ import { breakpoints } from "./breakpoints"
 
 const VideoComponent = () => {
   return (
-    <Container>
+    <Container id="video">
       <iframe
         src="https://www.youtube.com/embed/nJTsbZojero?controls=0&amp;start=4&autoplay=1&loop=1"
         frameborder="0"
