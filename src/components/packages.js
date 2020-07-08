@@ -246,7 +246,7 @@ const CardEcommerce = styled.div`
       text-align: center;
     }
     li:last-child {
-      margin-bottom: 105px;
+      margin-bottom: 45px;
     }
   }
 
