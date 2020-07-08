@@ -8,6 +8,12 @@ import { breakpoints } from "./breakpoints"
 const Menu = () => {
   const [openModal, setOpenModal] = useState(false)
 
+  function closeModal() {
+    if (openModal === true) {
+      setOpenModal(false)
+    }
+  }
+
   function handleModal() {
     if (openModal === false) {
       setOpenModal(true)
@@ -21,26 +27,17 @@ const Menu = () => {
       <MenuItems show={openModal}>
         <ul>
           <li>
-            <a
-              href="#video"
-              onClick={openModal === true ? handleModal() : null}
-            >
+            <a href="#video" onClick={() => closeModal()}>
               Portfolio
             </a>
           </li>
           <li>
-            <a
-              href="#packages"
-              onClick={openModal === true ? handleModal() : null}
-            >
+            <a href="#packages" onClick={() => closeModal()}>
               Pacotes
             </a>
           </li>
           <li>
-            <a
-              href="#footer"
-              onClick={openModal === true ? handleModal() : null}
-            >
+            <a href="#footer" onClick={() => closeModal()}>
               Contato
             </a>
           </li>
@@ -87,8 +84,8 @@ const MenuItems = styled.div`
       }
     }
   }
-
   @media (max-width: ${breakpoints.mobile}) {
+    display: none;
     ul {
       position: absolute;
       top: 50%;
@@ -111,6 +108,14 @@ const MenuItems = styled.div`
         }
       }
     }
+
+    ${props => {
+      if (props.show === true) {
+        return css`
+          display: block;
+        `
+      }
+    }}
   }
 `
 
@@ -122,7 +127,6 @@ const BurgerMenu = styled.div`
   background: white;
   transition: background 1ms ease-in-out;
   z-index: 6;
-
   ::before,
   ::after {
     content: "";
@@ -132,19 +136,15 @@ const BurgerMenu = styled.div`
     background: white;
     transition: transform 0.4s ease-in-out;
   }
-
   ::before {
     transform: translateY(-5px);
   }
-
   ::after {
     transform: translateY(5px);
   }
-
   @media (min-width: ${breakpoints.mobile}) {
     display: none;
   }
-
   ${props => {
     if (props.show === true) {
       return css`
@@ -170,7 +170,6 @@ const BurgerBackground = styled.div`
   transition: all 0.4s ease;
   opacity: 0;
   position: fixed;
-
   ${props => {
     if (props.show === true) {
       return css`

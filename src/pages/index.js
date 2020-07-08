@@ -43,6 +43,7 @@ const IndexPage = () => {
         <Work />
         <Video />
         <Packages />
+        <Customers />
       </Layout>
     </Container>
   )

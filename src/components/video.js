@@ -7,7 +7,7 @@ const VideoComponent = () => {
     <Container id="video">
       <iframe
         src="https://www.youtube.com/embed/nJTsbZojero?controls=0&amp;start=4&autoplay=1&loop=1"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
     </Container>
