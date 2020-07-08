@@ -103,18 +103,6 @@ const MenuItems = styled.div`
       }
     }
   }
-
-  ${props => {
-    if (props.show === true) {
-      return css`
-        display: block;
-      `
-    } else {
-      return css`
-        display: none;
-      `
-    }
-  }}
 `
 
 const BurgerMenu = styled.div`
